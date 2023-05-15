@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextToSpeech": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\Repositories\\C_Sharp\\ExtractNotes"
+    }
+  }
+}
