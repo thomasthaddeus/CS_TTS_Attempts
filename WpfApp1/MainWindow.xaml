@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="850">
+    <Grid>
+        <!-- Your controls here -->
+        <Button Command="{Binding RunExecutableCommand}" Content="Run Executable" Margin="684,30,10,380" />
+        <Button x:Name="AddAudio" Command="{Binding AddAudioCommand}" Content="Add Audio" Margin="688,377,6,37" />
+        <ComboBox ItemsSource="{Binding Voices}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedVoice}" BorderBrush="#FF8FDAA1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Height="24" Margin="0,84,12,0" />
+        <Button Command="{Binding OpenWebsiteCommand}" Content="Open Website" Margin="10,30,170,380" />
+        <Button Command="{Binding DisplayDateCommand}" Content="Display Date" Margin="685,288,10,124" />
+        <Button Command="{Binding CalculateSumCommand}" Content="Calculate Sum" Margin="685,264,10,151" />
+        <Button Command="{Binding ShowMessageCommand}" Content="Show Message" Margin="684,212,10,202" />
+        <Button Command="{Binding LogTimeCommand}" Content="Log Time" Margin="685,237,10,175" />
+        <Button Command="{Binding ChangeColorCommand}" Content="Change Color" Margin="684,128,10,286" />
+        <Button Command="{Binding LoadTextCommand}" Content="Load Text" Margin="685,59,10,355" />
+        <Button Command="{Binding PlaySoundCommand}" Content="Play Sound" Margin="686,402,6,10" />
+        <ScrollViewer HorizontalAlignment="Left" Height="365" Margin="10,59,0,0" VerticalAlignment="Top" Width="670"/>
+        <DockPanel Margin="0,0,0,414">
+            <Button x:Name="SendFiles" Command="{Binding SendFilesCommand}" Content="Send Files" Width="100" />
+            <Button x:Name="Save_Text" Command="{Binding SaveTextCommand}" Content="Save Text" Width="100" />
+            <Button x:Name="CloseApp" Command="{Binding CloseAppCommand}" Content="Close App" Width="100" />
+            <Button x:Name="SelectDirectory" Command="{Binding SelectDirectoryCommand}" Content="Select Directory" Width="100" />
+        </DockPanel>
+
+    </Grid>
+</Window>
