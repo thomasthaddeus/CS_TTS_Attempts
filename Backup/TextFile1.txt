@@ -1,0 +1,123 @@
+﻿// MainWindow.cs
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.Win32;
+using System;
+using System.IO;
+
+namespace PowerPointExtractor
+{
+    public sealed partial class MainWindow : Window
+    {
+        private Button extractButton;
+        private TextBox pptxFileTextBox;
+        private TextBox outputDirectoryTextBox;
+        private ListBox filesListBox;
+        private TextBlock statusTextBlock;
+        private PowerPointTextExtractor textExtractor;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            textExtractor = new PowerPointTextExtractor();
+
+            var grid = new Grid();
+            Content = grid;
+
+            var browseButton1 = new Button() { Content = "Browse..." };
+            browseButton1.Click += BrowseButton1_Click;
+
+            var browseButton2 = new Button() { Content = "Browse..." };
+            browseButton2.Click += BrowseButton2_Click;
+
+            pptxFileTextBox = new TextBox();
+            outputDirectoryTextBox = new TextBox();
+            extractButton = new Button() { Content = "Extract Text" };
+            extractButton.Click += ExtractButton_Click;
+            filesListBox = new ListBox();
+            statusTextBlock = new TextBlock();
+
+            grid.Children.Add(new TextBlock() { Text = "Choose PowerPoint File: " });
+            grid.Children.Add(pptxFileTextBox);
+            grid.Children.Add(browseButton1);
+            grid.Children.Add(new TextBlock() { Text = "Output Directory: " });
+            grid.Children.Add(outputDirectoryTextBox);
+            grid.Children.Add(browseButton2);
+            grid.Children.Add(extractButton);
+            grid.Children.Add(new TextBlock() { Text = "Processed Files: " });
+            grid.Children.Add(filesListBox);
+            grid.Children.Add(new TextBlock() { Text = "Status: " });
+            grid.Children.Add(statusTextBlock);
+
+            // TODO: Add controls to grid and set their positions and sizes
+        }
+
+        private void BrowseButton1_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "PowerPoint Files|*.pptx" };
+            try
+            {
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    pptxFileTextBox.Text = openFileDialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                statusTextBlock.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        private void BrowseButton2_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            try
+            {
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    outputDirectoryTextBox.Text = folderBrowserDialog.SelectedPath;
+                }
+            }
+            catch (Exception ex)
+            {
+                statusTextBlock.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        private async void ExtractButton_Click(object sender, RoutedEventArgs e)
+        {
+            string pptxFile = pptxFileTextBox.Text;
+            string outputDirectory = outputDirectoryTextBox.Text;
+
+            if (File.Exists(pptxFile) && Directory.Exists(outputDirectory))
+            {
+                filesListBox.Items.Clear();
+                statusTextBlock.Text = "Processing...";
+                extractButton.IsEnabled = false;
+
+                try
+                {
+                    foreach (string outputFile in textExtractor.ExtractSlideNotes(pptxFile, outputDirectory))
+                    {
+                        filesListBox.Items.Add(outputFile);
+                    }
+
+                    statusTextBlock.Text = "Finished processing";
+                }
+                catch (Exception ex)
+                {
+                    statusTextBlock.Text = $"Error: {ex.Message}";
+                }
+                finally
+                {
+                    extractButton.IsEnabled = true;
+                }
+            }
+            else
+            {
+                statusTextBlock.Text = "Invalid file or directory";
+            }
+        }
+    }
+}
