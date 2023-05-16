@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3E5hMFxRJWev7UEVAII4H1jNK6zjDFKCP3t3mGRLSaFT9kkRkRENdYRJ6vtCXed/Okpcwzpbz9iehEgbUIc1pw==",
+  "success": true,
+  "projectFilePath": "D:\\Repositories\\C_Sharp\\Text-To-Speech-Baseline\\Text-To-Speech-Baseline.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.28.0\\microsoft.cognitiveservices.speech.1.28.0.nupkg.sha512"
+  ],
+  "logs": []
+}
