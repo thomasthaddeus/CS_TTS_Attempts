@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "ppLfYKDLfdFDoAScU0hTzFJIKQdN6hwyvZxL9gczvyK/Esk6I7FeUmLUoiS6b5KRAGvpjRLg0uXZpYLkqZxVHQ==",
+  "success": true,
+  "projectFilePath": "D:\\Repositories\\C_Sharp\\ThadsBadassSolution\\IAM\\IAM.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\azure.core\\1.31.0\\azure.core.1.31.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\azure.identity\\1.9.0-beta.3\\azure.identity.1.9.0-beta.3.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.identity.client\\4.49.1\\microsoft.identity.client.4.49.1.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.25.3\\microsoft.identity.client.extensions.msal.2.25.3.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.22.0\\microsoft.identitymodel.abstractions.6.22.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.6.0\\system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.io.filesystem.accesscontrol\\5.0.0\\system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\Thaddeus Maximus\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
+  "logs": []
+}
