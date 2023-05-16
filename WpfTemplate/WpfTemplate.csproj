@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\View1ViewModel.cs" />
+    <Compile Remove="ViewModels\View2ViewModel.cs" />
+    <Compile Remove="Views\View1.xaml.cs" />
+    <Compile Remove="Views\View2.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\View1.xaml" />
+    <Page Remove="Views\View2.xaml" />
+  </ItemGroup>
+
+</Project>

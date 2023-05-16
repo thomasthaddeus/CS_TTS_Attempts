@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTemplate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,94,0,0" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <StackPanel DataContext="{Binding SelectedPerson}" HorizontalAlignment="Left" Height="96" VerticalAlignment="Top" Width="200" Margin="215,194,0,0" Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}">
+            <Grid Height="100">
+                <Button x:Name="Submit" Content="Submit" Command="{Binding SubmitCommand}" Width="76" HorizontalAlignment="Right" RenderTransformOrigin="1,0.5" Margin="0,42,0,38"/>
+                <Label x:Name="EnterName" Content="Enter your name:" Margin="0,39,80,35"/>
+                <TextBox x:Name="txtName" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="0,70,0,10" Width="NaN"/>
+                <Label x:Name="Name" Content="{Binding Name}" Margin="0,10,48,75" Width="NaN" Height="NaN"/>
+                <Label x:Name="Age" Content="{Binding Age}" HorizontalContentAlignment="Right" Margin="162,10,6,75" Background="#FFD1D6FD" Height="NaN">
+                    <Label.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.BorderBrush>
+                </Label>
+            </Grid>
+        </StackPanel>
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="505" Margin="0,299,0,0">
+            <TextBox Text="{Binding SelectedPerson.Name, ValidatesOnDataErrors=True}" Width="405"/>
+            <Button Content="Save" Command="{Binding SaveCommand}" Width="75"/>
+        </DockPanel>
+    </Grid>
+</Window>
