@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>TextToSpeech</RootNamespace>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <UserSecretsId>8331b841-8de3-4106-806c-a2b783286c22</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.28.0" />
+      <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230502000" />
+      <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25363-preview" />
+  </ItemGroup>
+</Project>
