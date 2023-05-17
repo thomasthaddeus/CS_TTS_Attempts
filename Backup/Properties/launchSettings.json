@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PowerPointExtractor (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PowerPointExtractor (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
